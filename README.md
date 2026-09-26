@@ -41,3 +41,5 @@ pnpm install
 pnpm run check      # typecheck, then real MCP calls against the live docs site
 vercel deploy --prod
 ```
+
+The pattern and the argument behind it: [convention-based-design](https://github.com/jagreehal/convention-based-design).
