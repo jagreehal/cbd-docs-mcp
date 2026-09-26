@@ -1,0 +1,22 @@
+{
+  "name": "cbd-docs-mcp",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "check": "tsc --noEmit && node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.1.0",
+    "mcp-handler": "^2.2.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.1.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.6.0"
+  }
+}
