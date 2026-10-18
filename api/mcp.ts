@@ -1,10 +1,10 @@
 // A remote MCP server over the Acme docs index. It reads the two files
-// cbd-docs-site publishes, the manifest and each page's Markdown twin, and
+// cbd-catalog publishes, the manifest and each page's Markdown twin, and
 // holds no documents of its own. Publishing repos never hear about it.
 import { createMcpHandler } from 'mcp-handler';
 import { z } from 'zod';
 
-const SITE = (process.env.DOCS_SITE ?? 'https://jagreehal.github.io/cbd-docs-site').replace(/\/$/, '');
+const SITE = (process.env.DOCS_SITE ?? 'https://jagreehal.github.io/cbd-catalog').replace(/\/$/, '');
 
 interface ManifestEntry {
   owner: string;
@@ -22,7 +22,7 @@ export interface Doc extends ManifestEntry {
 
 // ponytail: every cold start fetches the manifest and each .md twin, then keeps
 // them for five minutes. Fine to a few hundred docs; past that, have
-// cbd-docs-site publish a search index and read that instead.
+// cbd-catalog publish a search index and read that instead.
 const TTL = 5 * 60 * 1000;
 let cache: { at: number; docs: Doc[] } | undefined;
 

@@ -26,11 +26,11 @@ question, and to cite the title, owning team, date and URL of each doc it uses.
 
 ## How it gets the docs
 
-The server reads the two files [cbd-docs-site](https://github.com/jagreehal/cbd-docs-site)
+The server reads the two files [cbd-catalog](https://github.com/jagreehal/cbd-catalog)
 publishes: `contracts/docs-manifest.json` and the `.md` twin of each page. It
 keeps them for five minutes. It holds no documents, and the publishing
 repositories do not know it exists. It is one more consumer of a published
-contract, like the catalog.
+contract, like each publisher's docs check.
 
 For private docs, the same server sits behind OAuth tied to company sign-in, and
 Claude reads what the signed-in person can read. This public demo runs without
