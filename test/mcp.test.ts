@@ -1,5 +1,5 @@
 // Speaks real MCP to the handler, in-process, over the official client. The
-// docs come from the live cbd-docs-site, so this also checks the contract this
+// docs come from the live cbd-catalog site, so this also checks the contract this
 // server consumes: the manifest and the .md twins.
 import assert from 'node:assert/strict';
 import { after, before, test } from 'node:test';
@@ -37,7 +37,7 @@ test('the 02:40 question finds the payments runbook first', async () => {
 test('get_doc returns the markdown twin with provenance', async () => {
   const markdown = text(await client.callTool({ name: 'get_doc', arguments: { id: 'cbd-payments-service/runbook' } }));
   assert.match(markdown, /^owner: payments-platform$/m);
-  assert.match(markdown, /^source: https:\/\/github\.com\/jagreehal\/cbd-payments-service\/blob\/main\/docs\/runbook\.md$/m);
+  assert.match(markdown, /^source: https:\/\/github\.com\/jagreehal\/cbd-payments-service\/blob\/HEAD\/docs\/runbook\.md$/m);
   assert.match(markdown, /replay from the last acknowledged event/);
 });
 
